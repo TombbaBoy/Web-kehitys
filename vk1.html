@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Positioning Items</title>
+	<meta charset="UTF-8">
+	<style>  
+         
+        /*////////////////////
+        // Positioning items    
+        //////////////////////
+        
+        Reset *
+        Display: inline vs block
+        https://www.w3schools.com/cssref/pr_class_display.asp
+    
+        Box-sizing
+        https://www.w3schools.com/css/css3_box-sizing.asp
+        
+        Using percentages and max-width
+        https://www.w3schools.com/cssref/css_units.asp
+    
+        Float and clear
+        https://www.w3schools.com/cssref/pr_class_float.asp
+        
+        Flexbox - https://www.w3schools.com/css/css3_flexbox.asp
+        
+        Absolute/Relative positioning
+        https://www.w3schools.com/cssref/pr_class_position.asp
+          
+        Centering
+        https://www.w3schools.com/css/css_align.asp
+        
+        */
+        
+        * {
+            box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+            
+        }
+        
+    
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            color: aliceblue;
+        }
+        
+        #red { background-color: red;}
+        #green { background-color: green;}
+        #blue { background-color: blue;}
+        #yellow { background-color: yellow; color: black;}
+        #orange { background-color: orange;}
+      
+        .clear { clear: both;}
+    
+        /* img */
+        img {
+        }
+        
+        /* container */
+        .container {           
+        }
+        body{
+            background-color: white;
+            margin: 0;
+        }
+        
+        /* relative and absolute positioning with blue */      
+        #blue {
+        }
+
+        .boom {
+            color: orange;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative; 
+            padding-top: 35px;
+
+        }
+        #slime {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+            width: 98%;
+        }
+        h1 {
+            color: rgb(248, 1, 137);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .box {
+            float: left; /* Float boxes to the left */
+            height: 120px;
+            width: 120px;
+            margin: 0;
+            padding: 5px;
+            border: 1px solid black;
+            color: wheat;
+            display: block; /* Center text vertically */
+        }
+
+        .clear {
+            clear: both; /* Clear floats */
+        }
+        
+        p {
+            color: pink;
+        }
+        main::after {
+            margin: top: 20px;
+            padding: 10px;
+            width: 50px;
+        }
+        nav::after{
+            content : '';
+            clear: both;
+            display: table;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .img-japanese-restaurant{
+            width: 100%;
+            
+        }
+        main {
+             background-color: black;
+             margin: 20px auto;
+             padding: 10px;
+             width: 600px;
+             position: relative;
+        }
+        .b6 {
+            background-color: rgb(16, 187, 245);
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top:30px;
+            left: 60px;
+
+            
+        }
+        .sushi-image {
+        
+           width: 100px;
+           height: 100px;
+              position: absolute;
+              top: top -10px;
+              right: 1px;
+        }
+    </style>
+    </head>
+
+<body>
+    <nav>
+        <div class="box" id="red">Box 1</div>  
+        <div class="box" id="green">Box 2</div> 
+        <div class="box" id="blue">Box 3</div>  
+        <div class="box" id="yellow">Box 4</div>  
+        <div class="box" id="orange">Box 5</div>
+        
+    </nav>
+    <main>   
+
+       
+        <img class="sushi-image" src="Images/sushi.png" alt="sushi">
+    <h1>Sushi rolling deep</h1>
+    
+       
+
+    
+        <img class="img-japanese-restaurant" src="Images/japanese-restaurant.webp" alt="Japanese Restaurant" style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+
+    <article>
+        <div>
+        <h2>Lisää meistä:</h2>
+        
+        <p>We are great sushi place!</p> 
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    </article>
+
+    <!-- Float continues, clearing -->
+    
+    
+    
+    <!-- Responsive images and centering -->  
+    </main>
+    <footer>Copyright</footer>
+
+
+
+</body>
+</html>
