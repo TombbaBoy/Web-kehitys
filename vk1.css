@@ -56,11 +56,6 @@
             font-family: Arial, sans-serif;
             position: relative; /* Allows absolute positioning of child elements */
         }
-        
-        /* relative and absolute positioning with blue */      
-        #blue {
-        }
-
         .boom {
             color: orange;
             font-size: 20px;
@@ -100,7 +95,7 @@
             color: pink;
         }
         main::after {
-            margin: top: 20px;
+            margin: 20px;
             padding: 10px;
             width: 50px;
         }
