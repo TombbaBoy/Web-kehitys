@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: black;
+    }
+    td, th {
+      border: 1px solid green;
+      padding: 5px 10px;
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>Multiplication Table</h2>
+  <div id="table-container"></div>
+
+  <script>
+    // Step 1: Ask for integer input
+    let userInput = prompt("Enter a positive integer:");
+
+    // Step 2: Convert input to a number
+    let number = Number(userInput);
+
+    // Check if input is valid
+    if (Number.isInteger(number) && number > 0) {
+      // Step 3: Create a table element
+      let table = "<table>";
+
+      // Step 4: Generate multiplication table using for loops
+      //   table row = tr        table data = td
+      for (let i = 1; i <= number; i++) {
+        table += "<tr>";
+        for (let j = 1; j <= number; j++) {
+          let product = i * j;
+          table += "<td>" + product + "</td>";
+        }
+        table += "</tr>";
+      }
+
+      table += "</table>";
+
+      // Step 5: Display the table inside the HTML document
+      document.getElementById("table-container").innerHTML = table;
+    } else {
+      document.getElementById("table-container").innerHTML = 
+        "<p>Please enter a valid positive integer.</p>";
+    }
+  </script>
+</body>
+</html>

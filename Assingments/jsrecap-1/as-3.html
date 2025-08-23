@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Calculator</title>
+  <style>
+    body { 
+        font-family: Arial, sans-serif; 
+        margin: 20px; 
+    }
+    .result {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      background-color: #ffffff;
+      width: fit-content;
+      
+    }
+    .fail{
+        color: red;
+    }
+    .sufficient{
+        color: orange;
+    }
+    .fair{
+        color: yellow;
+    }
+    .good{
+        color: rgb(184, 241, 184);
+    }
+    .verygood{
+        color: rgb(85, 200, 85);
+    }
+    .perfect{
+        color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <h2>Course Grade Calculator</h2>
+  <div id="output"></div>
+
+  <script>
+    // Step 1: Prompt the user for their score
+    let score = Number(prompt("Enter your score (0 - 100):"));
+
+    let grade = "";
+    
+    let gradeClass = "";
+
+    // Step 2: Check validity of input
+    if (!isNaN(score) && score >= 0 && score <= 100) {
+      
+      // Step 3: Determine grade based on ranges
+      if (score <= 39) {
+        grade = 0; gradeClass = "fail"
+      } else if (score <= 51) {
+        grade = 1; gradeClass = "sufficient"
+      } else if (score <= 63) {
+        grade = 2; gradeClass = "fair"
+      } else if (score <= 75) {
+        grade = 3; gradeClass = "good"
+      } else if (score <= 87) {
+        grade = 4;gradeClass = "verygood"
+      } else {
+        grade = 5; gradeClass = "perfect"
+      }
+
+      // Step 4: Display result
+       document.getElementById("output").innerHTML =
+        `<div class="result">
+           <p><strong>Your Score:</strong> ${score}</p>
+           <p><strong>Your Grade:</strong> <span class="${gradeClass}">${grade}</span></p>
+         </div>`;
+    } else {
+      // Invalid input message
+      document.getElementById("output").innerHTML =
+        `<div class="result"> Please enter a valid number between 0 and 100.</div>`;
+    }
+  </script>
+</body>
+</html>

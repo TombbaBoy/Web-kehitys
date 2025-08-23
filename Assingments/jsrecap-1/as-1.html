@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Celsius Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .result {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #000000;
+      width: fit-content;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>Temperature Converter</h2>
+  <div id="output"></div>
+
+  <script>
+    // Step 1: Prompt user for Celsius temperature
+    let celsiusInput = prompt("Enter temperature in Celsius:");
+
+    // Step 2: Convert input to a number
+    let celsius = Number(celsiusInput);
+
+    // Step 3: Check if input is valid
+    // isNaN = is not a number = checks if the value is not a number
+    if (!isNaN(celsius)) {
+      // Convert Celsius to Fahrenheit and Kelvin
+      let fahrenheit = (celsius * 9/5) + 32;
+      let kelvin = celsius + 273.15;
+
+      // Step 4: Display results
+      //<strong> makes text bold and lets the browser know that it is important
+
+        //${} is used to insert variables into a string
+      document.getElementById("output").innerHTML =
+        `<div class="result">
+          <p><strong>Celsius:</strong> ${celsius} °C</p>
+          <p><strong>Fahrenheit:</strong> ${fahrenheit.toFixed(2)} °F</p>
+          <p><strong>Kelvin:</strong> ${kelvin.toFixed(2)} K</p>
+        </div>`;
+    } else {
+      // If input is invalid
+      document.getElementById("output").innerHTML =
+        "<p>Please enter a valid number for Celsius.</p>";
+    }
+  </script>
+</body>
+</html>
