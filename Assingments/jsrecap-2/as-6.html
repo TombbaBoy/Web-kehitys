@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Movie Ratings</title>
+  <style>
+    body { 
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        }
+    .result { 
+        margin-top: 15px;
+        padding: 10px;
+        background: #f9f9f9;
+        border: 1px solid #333;
+        border-radius: 5px;
+        }
+    .highlight { 
+        color: green;
+        font-weight: bold;
+        }
+  </style>
+</head>
+<body>
+  <h2> Movie Rating Tracker</h2>
+  <div id="output" class="result"></div>
+
+  <script>
+    // Step 1: Ask how many movies
+    let movieCount = Number(prompt("How many movies do you want to rate?"));
+
+    // Step 2: Array to store movie objects
+    let movies = [];
+
+    // Step 3: Collect movie details
+    for (let i = 0; i < movieCount; i++) {
+      let title = prompt(`Enter the title of movie #${i + 1}:`);
+      let rating = Number(prompt(`Enter your rating for "${title}" (1-5):`));
+
+      // Validate rating (default to 1 if invalid)
+      if (isNaN(rating) || rating < 1 || rating > 5) {
+        rating = 1;
+        alert("Invalid rating entered. Defaulting to 1.");
+      }
+
+      // Create object literal for movie
+      let movie = {title: title, rating: rating};
+
+      // Add to array
+      movies.push(movie);
+    }
+
+    // Step 4: Sort movies by rating (highest → lowest)
+    movies.sort((a, b) => b.rating - a.rating);
+
+    // Step 5: Highest-rated movie (first after sorting)
+    let highestRated = movies[0];
+
+    // Step 6: Display results
+    let outputDiv = document.getElementById("output");
+    let resultHTML = "<strong>Sorted Movies (by rating):</strong><br><ul>";
+
+    for (let movie of movies) {
+      resultHTML += `<li>${movie.title} - Rating: ${movie.rating}</li>`;
+    }
+    resultHTML += "</ul>";
+
+    resultHTML += `<p class="highlight"> Highest-Rated Movie: ${highestRated.title} (Rating: ${highestRated.rating})</p>`;
+
+    outputDiv.innerHTML = resultHTML;
+  </script>
+</body>
+</html>

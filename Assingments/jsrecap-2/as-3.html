@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Even Number</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .result { margin-top: 15px; padding: 10px; background: #f2f2f2; border: 1px solid #333; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Even Number </h2>
+  <div id="output" class="result"></div>
+
+  <script>
+    // Step 1: Define an empty array
+    let numbers = [];
+
+    // Step 2: Keep prompting the user for numbers
+    let addMore;
+    do {
+      let input = prompt("Enter a number:");
+      let num = Number(input);
+
+      if (!isNaN(num)) {
+        numbers.push(num); // add number to array
+      } else {
+        alert("Please enter a valid number.");
+      }
+
+      addMore = confirm("Do you want to enter another number?");
+    } while (addMore);
+
+    // Step 3: Display even numbers using for...of
+    let outputDiv = document.getElementById("output");
+    let resultHTML = "<strong>Even Numbers:</strong><br>";
+
+    let foundEven = false;
+    for (let num of numbers) {
+      if (num % 2 === 0) {   // check if even
+        resultHTML += num + "<br>";
+        foundEven = true;
+      }
+    }
+
+    if (!foundEven) {
+      resultHTML += "No even numbers were entered.<br>";
+    }
+
+    // Step 4: End of program message
+    resultHTML += "<br><em>End of program. Thanks for using the site! :)</em>";
+
+    outputDiv.innerHTML = resultHTML;
+  </script>
+</body>
+</html>
