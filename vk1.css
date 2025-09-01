@@ -45,9 +45,7 @@
     
       
         
-        /* container */
-        .container {           
-        }
+        
         body{
           
             margin: 0;
@@ -236,3 +234,88 @@
             position: relative;
             left: 10px;
         } 
+
+        /* Dialog styles */
+:root {
+  --primary: #fbbf24;
+  --accent: rgb(248, 1, 137);
+  --error: #e63946;
+  --success: #2a9d8f;
+  --bg-light: #fff8f0;
+}
+
+.dialog-btn {
+  background: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dialog-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.register-dialog {
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  background: var(--bg-light) url("Images/sushi(1).png") no-repeat top right / 100px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.register-dialog h2 {
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.register-dialog label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.register-dialog input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.register-dialog input:valid {
+  border-color: var(--success);
+  background-color: #e8fdf5;
+}
+
+.register-dialog input:invalid:focus {
+  border-color: var(--error);
+  background-color: #ffe8e8;
+}
+
+.register-dialog .error {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--error);
+}
+
+.register-dialog input:invalid + .error {
+  display: block;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.cancel {
+  background: #ccc;
+}

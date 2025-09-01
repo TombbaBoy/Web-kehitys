@@ -4,7 +4,8 @@
 	<title>vk1</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="vk1.css">
-    </head>
+    <script defer src="vk1.js"></script>
+</head>
 
 <body>
    <nav class="navbar">
@@ -18,27 +19,46 @@
    
   <div class="info-text" style="color: black;">
     <article>Lisää infoa tulee muutaman viikon päästä!</article>
-    </div>
-    <main>   
-        <img src="Images/sushi(1).png" alt="sushi" class="sushi-image">  
+    <!-- Dialog open button -->
+    <button id="openDialog" class="dialog-btn">Rekisteröidy</button>
+  </div>
+
+  <!-- Dialog -->
+  <dialog id="registerDialog" class="register-dialog">
+    <form method="dialog" id="registerForm" novalidate>
+      <h2>Rekisteröidy tiedoillasi</h2>
       
-    <h1>Sushi rolling deep</h1>
-    
-    
-    <img class="img-japanese-restaurant" src="Images/japanese-restaurant.webp" alt="Japanese Restaurant" style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+      <label for="surname">Sukunimi, minimi 3 kirjainta:</label>
+      <input type="text" id="surname" name="surname" minlength="3" required>
+      <span class="error">Anna vähintään 3 kirjainta</span>
 
-    <article>
-        <div class="adjust-from-left">
-        <h2>Lisää meistä:</h2>
-        
-        <p>We are a great sushi place!</p> 
-    
-    </div>
-    </article>
+      <label for="email">Email osoite (@metropolia.fi):</label>
+      <input type="email" id="email" name="email" pattern=".+@metropolia\.fi" required>
+      <span class="error">Sähköpostin tulee olla @metropolia.fi</span>
 
-    
-    </main>
-    <footer>Copyright</footer>
+      <label for="password">Salasana:</label>
+      <input type="password" id="password" name="password" minlength="5" required>
+      <span class="error">Salasanassa vähintään 5 merkkiä</span>
+
+      <div class="form-buttons">
+        <button type="submit" class="dialog-btn">Lähetä</button>
+        <button type="button" id="closeDialog" class="dialog-btn cancel">Sulje</button>
+      </div>
+    </form>
+  </dialog>
+
+  <main>   
+      <img src="Images/sushi(1).png" alt="sushi" class="sushi-image">  
+      <h1>Sushi rolling deep</h1>
+      <img class="img-japanese-restaurant" src="Images/japanese-restaurant.webp" alt="Japanese Restaurant" style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+      <article>
+          <div class="adjust-from-left">
+          <h2>Lisää meistä:</h2>
+          <p>We are a great sushi place!</p> 
+      </div>
+      </article>
+  </main>
+  <footer>Copyright</footer>
 
 </body>
 </html>
