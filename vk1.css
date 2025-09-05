@@ -319,3 +319,140 @@
 .cancel {
   background: #ccc;
 }
+.hero {
+  background-image: url("Images/sushi\(1\).png"); /* replace with your actual image */
+  background-size: contain;   /* scale image to fit instead of crop */
+  background-repeat: no-repeat; 
+  background-position: center; 
+  height: 60vh;               /* smaller height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+
+  border:  5px solid black;
+  border-radius: 500px;
+  
+}
+
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent bg for readability */
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+
+
+
+/* Tablet breakpoint */
+@media (min-width: 600px) {
+  .hero {
+    height: 70vh;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  main {
+    width: 90%; /* main content adapts */
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  .hero {
+    height: 90vh;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  main {
+    width: 800px;
+  }
+
+  .navbar ul {
+    display: flex;
+    gap: 20px;
+  }
+}
+.menu {
+  background: #000000;
+  padding: 40px 20px;
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.menu h2 {
+  color: rgb(248, 1, 137);
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Menu item card */
+.menu-item {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.2s ease;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 10px;
+  max-width: 250px;
+  height: auto;
+  display: block;    
+  margin: 0 auto 15px auto; 
+}
+
+.menu-item h3 {
+  margin: 15px 0 10px;
+  color: #f80189;
+}
+
+.menu-item p {
+  color: #333;
+}
+
+.price {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #040404;
+}
