@@ -1,12 +1,11 @@
-// utils.js
 
 export const fetchData = async (url) => {
   try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("Network response was not ok");
-    return await response.json();
-  } catch (error) {
-    console.error("Fetch error:", error);
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.error(err);
     return null;
   }
 };

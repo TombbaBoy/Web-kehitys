@@ -1,3 +1,3 @@
 // variables.js
 
-export const baseUrl = "https://media1.edu.metropolia.fi/restaurant"; // API URL
+export const BASE_URL = "https://media1.edu.metropolia.fi/restaurant/api/v1"; // API URL
