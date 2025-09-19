@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <title>vk1</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="vk5.css"> 
+  <script defer src="vk1.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="logo"><i class="fas fa-fish"></i> It's Sushi</a>
+    <ul>
+      <li><a href="#" class="active">Etusivu</a></li>
+      <li><a href="#">Ruokalistat</a></li>
+      <li><a href="#">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <h1>It's Sushi</h1>
+        <button id="openDialog" class="dialog-btn"><i class="fas fa-user-plus"></i> Rekisteröidy</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info + Pills Section -->
+  <section class="info-pills">
+  <p class="info-text">Lisää infoa tulee muutaman viikon päästä!</p>
+  <div class="pill-buttons">
+    <button class="pill">
+      <!-- SVG ikoni salaattilehti -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+           viewBox="0 0 16 16">
+        <path d="M7.5 0C11.642 0 15 3.358 15 7.5S11.642 15 7.5 15 0 11.642 0 7.5 3.358 0 7.5 0z"/>
+      </svg>
+      Salaatti
+    </button>
+    <button class="pill">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+           viewBox="0 0 16 16">
+        <path d="M2 1h12v14H2z"/>
+      </svg>
+      Liha
+    </button>
+    <button class="pill">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+           viewBox="0 0 16 16">
+        <path d="M8 0l4 16H4z"/>
+      </svg>
+      Kala
+    </button>
+    <button class="pill">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+           viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="7"/>
+      </svg>
+      Kasvis
+    </button>
+  </div>
+</section>
+
+
+  <!-- Register Dialog -->
+  <dialog id="registerDialog" class="register-dialog">
+    <form method="dialog" id="registerForm" novalidate>
+      <h2>Rekisteröidy tiedoillasi</h2>
+
+      <label for="surname">Sukunimi, minimi 3 kirjainta:</label>
+      <input type="text" id="surname" name="surname" minlength="3" required>
+      <span class="error">Anna vähintään 3 kirjainta</span>
+
+      <label for="email">Email osoite (@metropolia.fi):</label>
+      <input type="email" id="email" name="email" pattern=".+@metropolia\.fi" required>
+      <span class="error">Sähköpostin tulee olla @metropolia.fi</span>
+
+      <label for="password">Salasana:</label>
+      <input type="password" id="password" name="password" minlength="5" required>
+      <span class="error">Salasanassa vähintään 5 merkkiä</span>
+
+      <div class="form-buttons">
+        <button type="submit" class="dialog-btn">Lähetä</button>
+        <button type="button" id="closeDialog" class="dialog-btn cancel">Sulje</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Main Content -->
+  <main>
+    <img src="Images/sushi(1).png" alt="sushi" class="sushi-image">
+    <h1>Sushi rolling deep</h1>
+    <img class="img-japanese-restaurant" src="Images/japanese-restaurant.webp" alt="Japanese Restaurant"
+      style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+    <article>
+      <div class="adjust-from-left">
+        <h2>Lisää meistä:</h2>
+        <p>Olemme mahtava sushi paikka!</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Menu Section -->
+  <section class="menu">
+    <h2>Ruokalista</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="Images/nigiri.webp" alt="Nigiri Sushi">
+        <h3>Nigiri</h3>
+        <p>Tuore lohi riisin päällä.</p>
+        <span class="price">8 €</span>
+      </div>
+
+      <div class="menu-item">
+        <img src="Images/maki.webp" alt="Maki Roll">
+        <h3>Maki Roll</h3>
+        <p>Perinteinen kurkku- ja avokado maki.</p>
+        <span class="price">6 €</span>
+      </div>
+
+      <div class="menu-item">
+        <img src="Images/temaki.webp" alt="Temaki">
+        <h3>Temaki</h3>
+        <p>Kartionmuotoinen rulla, joka on täytetty riisillä, kalalla ja vihanneksilla.</p>
+        <span class="price">12 €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>Copyright</footer>
+</body>
+</html>
